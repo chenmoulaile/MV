@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Noto Sans SC,46,&H00F4FFEA,&H00FFFFFF,&H00143028,&H8C14243C,0,0,0,0,100,100,0.5,0,3,8,0,2,120,120,64,1
+Style: Note,Noto Sans SC,33,&H00FFF0C8,&H00FFFFFF,&H00143028,&H8C14243C,1,0,0,0,100,100,0.5,0,3,6,0,2,120,120,26,1
+Style: Title,Noto Sans SC,96,&H00FFFFFF,&H00FFFFFF,&H008C2E1A10,&H96000000,1,0,0,0,100,100,2,0,1,4,2,8,80,80,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.35,0:00:11.05,Sub,,0,0,0,,平时写算法题，是不是老得在浏览器和编辑器中间来回切？
+Dialogue: 0,0:00:00.35,0:00:11.05,Sub,,0,0,0,,题面看一半，样例还得自己手动贴，真的挺烦的。
+Dialogue: 0,0:00:11.55,0:00:16.85,Sub,,0,0,0,,今天给大家看一个 Sublime 的插件，专门治这个。
+Dialogue: 1,0:00:11.55,0:00:16.85,Note,,0,0,0,,Algorithm Competition Assistant · 算法竞赛助手
+Dialogue: 0,0:00:17.35,0:00:23.25,Sub,,0,0,0,,我随便找了一道题，浏览器里正常打开，网址复制一下。
+Dialogue: 0,0:00:23.75,0:00:30.75,Sub,,0,0,0,,回到编辑器，把这个网址丢给它
+Dialogue: 0,0:00:23.75,0:00:30.75,Sub,,0,0,0,,题面、样例，它自己全抓进来了。
+Dialogue: 0,0:00:31.25,0:00:36.75,Sub,,0,0,0,,代码就贴在下面，该咋写咋写，跟平时一模一样。
+Dialogue: 0,0:00:37.25,0:00:44.25,Sub,,0,0,0,,写完按一下运行，几个测试点、用时多少、吃多少内存，直接排在右边。
+Dialogue: 0,0:00:44.75,0:00:49.45,Sub,,0,0,0,,全绿，这题就算过了，连答案都不用自己对。
+Dialogue: 0,0:00:49.95,0:00:54.45,Sub,,0,0,0,,界面中英文都有，按个人口味随便切。
+Dialogue: 0,0:00:54.95,0:01:01.65,Sub,,0,0,0,,另外，对拍、练习统计、比赛计时器这些小工具，它也全给你备好了。
+Dialogue: 0,0:01:02.15,0:01:10.25,Sub,,0,0,0,,这个插件已经上架官方的 Package Control 了，装起来就是搜个名字的事。
+Dialogue: 1,0:01:02.15,0:01:10.25,Note,,0,0,0,,Package Control 搜索 Algorithm Competition Assistant 即可安装
+Dialogue: 0,0:01:10.75,0:01:16.25,Sub,,0,0,0,,这期先混个脸熟，具体怎么玩，下期接着聊。
+Dialogue: 2,0:00:11.50,0:00:16.70,Title,,0,0,0,,{\fad(450,450)}把刷题搬进 Sublime
