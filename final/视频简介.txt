@@ -1,30 +1,15 @@
-【视频简介】Algorithm Competition Assistant · 第一期：整体介绍
-================================================================
+Algorithm Competition Assistant —— Sublime Text 的算法竞赛本地测评插件
 
-这期视频给大家整体介绍一款 Sublime Text 算法竞赛本地测评插件——
-Algorithm Competition Assistant（算法竞赛助手）。
+视频里演示的一切都是真实操作：从 Package Control 安装插件，到用 Competitive Companion 从洛谷题目页一键抓取样例，再到贴上代码、Ctrl+Alt+B 运行判题。
 
-它能做什么
-----------------------------------------------------------------
-· 一键抓题：浏览器里装好 Competitive Companion 扩展，点一下扩展图标，
-  题面、样例、时空限制直接进编辑器；也可以用 Ctrl+Alt+Shift+F 从 URL 抓取
-· 本地判题：Ctrl+Alt+B 运行，逐测试点给出 AC/WA/TLE/MLE/RE 等判定、
-  用时与内存，右侧面板一目了然
-· 文件输入输出：CSP/NOI 的 freopen 题按题设置一次即可
-· 对拍、练习统计、比赛计时器、Benchmark、模板片段等刷题工具箱
-· 界面中英文双语，随时切换
+【安装】
+Ctrl+Shift+P → Package Control: Install Package → 搜索 Algorithm Competition Assistant → 回车，即装即用。官方 Package Control 已收录。
 
-怎么安装
-----------------------------------------------------------------
-插件已被官方 Package Control 收录：
-1. Ctrl+Shift+P 打开命令面板
-2. 输入 Package Control: Install Package 回车
-3. 搜索 Algorithm Competition Assistant 回车安装，装完即用
+【抓题】
+浏览器安装 Competitive Companion 扩展，在其设置里的端口列表中加入 12345；Sublime 启动后插件会自动监听。打开题目页，点一下扩展（或按 Ctrl+Shift+U），回到编辑器按 Ctrl+Alt+L，一题一个文件，题面信息和样例自动就位。
 
-说明
-----------------------------------------------------------------
-· 视频中的演示全部为真实操作录屏：真实安装 Sublime Text 4 与插件、
-  Chrome 打开洛谷真实题目页（P17831 [CSP-S 2026] 能量水晶 / crystal）、
-  真实抓取题面与两组官方样例、真实编译运行并 2/2 通过
-· 演示代码为作者提供的原始代码，DejaVu Sans Mono 字体
-· 第一期只做整体介绍，具体功能玩法下期展开
+【运行与判题】
+Ctrl+Alt+B 按配置的编译命令和运行命令跑全部样例，每个测试点给出判定、用时和内存；用时和内存都按真实进程测量，不是估算。程序崩溃时能定位到出错的源码行，编译带缓存。
+
+【实话实说】
+这个插件基于 FastOlympicCoding 开发，判题结果的显示方式参考了 cph-ng，浏览器抓题的思路来自 FastOlympicCodingHook。它不做题，也不联网判题，只把本地调试这件事做顺手。
