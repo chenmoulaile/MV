@@ -1,0 +1,30 @@
++ BASE=/home/z/my-project/workspace/tts/gptsovits_pretrained
++ R='https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath='
++ rm -f /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s2G2333k.pth /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-hubert-base/pytorch_model.bin /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-roberta-wwm-ext-large/pytorch_model.bin
++ for spec in "gsv-v2final-pretrained/s2G2333k.pth|$BASE/gsv-v2final-pretrained/s2G2333k.pth" "gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt|$BASE/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt" "chinese-hubert-base/pytorch_model.bin|$BASE/chinese-hubert-base/pytorch_model.bin" "chinese-roberta-wwm-ext-large/pytorch_model.bin|$BASE/chinese-roberta-wwm-ext-large/pytorch_model.bin"
++ fp=gsv-v2final-pretrained/s2G2333k.pth
++ out=/home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s2G2333k.pth
+++ redir gsv-v2final-pretrained/s2G2333k.pth
+++ curl -sI --max-time 30 'https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath=gsv-v2final-pretrained/s2G2333k.pth&Revision=master'
+++ tr -d '\r'
+++ grep -i '^location:'
+++ cut '-d ' -f2
++ url='https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/92/4f/dccaa3c574bf139c25c9759aa1ed3b3f99e19a7c529ee996c2bc17663695?filename=s2G2333k.pth&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534949-12248005c88f4c58b166d742171445a0-0-20dedde9176813d87a165d564616905d'
++ echo 'URL: https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/92/4f/dccaa3c574bf139c25c9759aa1ed3b3f99e19a7c529ee996c2bc17663695?filename=s2G2333k.pth&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534949-12248005c88f4c58b166d742171445a0-0-20dedde9176813d87a165d564616905d'
+URL: https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/92/4f/dccaa3c574bf139c25c9759aa1ed3b3f99e19a7c529ee996c2bc17663695?filename=s2G2333k.pth&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534949-12248005c88f4c58b166d742171445a0-0-20dedde9176813d87a165d564616905d
++ python3 /home/z/my-project/scripts/pdl.py 'https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/92/4f/dccaa3c574bf139c25c9759aa1ed3b3f99e19a7c529ee996c2bc17663695?filename=s2G2333k.pth&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534949-12248005c88f4c58b166d742171445a0-0-20dedde9176813d87a165d564616905d' /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s2G2333k.pth 16
+size 106035259
+done 106035259
++ for spec in "gsv-v2final-pretrained/s2G2333k.pth|$BASE/gsv-v2final-pretrained/s2G2333k.pth" "gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt|$BASE/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt" "chinese-hubert-base/pytorch_model.bin|$BASE/chinese-hubert-base/pytorch_model.bin" "chinese-roberta-wwm-ext-large/pytorch_model.bin|$BASE/chinese-roberta-wwm-ext-large/pytorch_model.bin"
++ fp=gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt
++ out=/home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt
+++ redir gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt
+++ curl -sI --max-time 30 'https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath=gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt&Revision=master'
+++ grep -i '^location:'
+++ tr -d '\r'
+++ cut '-d ' -f2
++ url='https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/73/2f/94e63b148066e24c7f9d2637f3374083e637635f07fbdb695dee20ddbe1f?filename=s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534950-df7aeb4b9c0c40cca2a0b6028ce4e956-0-1df1a8ae21c4e3416603f6a5bca494b1'
++ echo 'URL: https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/73/2f/94e63b148066e24c7f9d2637f3374083e637635f07fbdb695dee20ddbe1f?filename=s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534950-df7aeb4b9c0c40cca2a0b6028ce4e956-0-1df1a8ae21c4e3416603f6a5bca494b1'
+URL: https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/73/2f/94e63b148066e24c7f9d2637f3374083e637635f07fbdb695dee20ddbe1f?filename=s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534950-df7aeb4b9c0c40cca2a0b6028ce4e956-0-1df1a8ae21c4e3416603f6a5bca494b1
++ python3 /home/z/my-project/scripts/pdl.py 'https://cdn-lfs-cn-1.modelscope.cn/prod/lfs-objects/73/2f/94e63b148066e24c7f9d2637f3374083e637635f07fbdb695dee20ddbe1f?filename=s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt&namespace=AI-ModelScope&repository=GPT-SoVITS&revision=master&tag=model&auth_key=1793534950-df7aeb4b9c0c40cca2a0b6028ce4e956-0-1df1a8ae21c4e3416603f6a5bca494b1' /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt 16
+size 155315150

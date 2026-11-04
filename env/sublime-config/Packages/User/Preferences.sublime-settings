@@ -1,0 +1,23 @@
+{
+	"font_face": "DejaVu Sans Mono",
+	"font_size": 15,
+	"update_check": false,
+	"hot_exit": false,
+	"remember_open_files": false,
+	"close_windows_when_empty": false,
+	"color_scheme": "Mariana.sublime-color-scheme",
+	"line_padding_top": 2,
+	"line_padding_bottom": 2,
+	"highlight_line": true,
+	"index_files": false,
+	"preview_on_click": false,
+	"show_definitions": false,
+	"auto_complete": false,
+	"draw_white_space": "none",
+	"translate_tabs_to_spaces": false,
+	"tab_size": 4,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+}

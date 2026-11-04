@@ -1,0 +1,11 @@
+[log] %c洛%c谷 %cLegendary Fake Expert / %s ver.%s font-size: 2em; font-weight: bold; color: #3498db; font-size: 2em; font-weight: bold; color: #4caf50; font-style: italic; columba:main 20261018-2305
+[log] [@lfe/utils/lfe-init] instance=%s timeBase=%d timeInit=%d config=%s main 1793794917 1793794917 74d532c6c7861bfe
+[debug] [lentille/router] Skipping first page navigation
+[info] [lfe/columba::local-store] Local copy of tags is up-to-date: zh-CN/2026110419
+[info] [lentille/config] Latest version: 74d532c6c7861bfe Local version: 74d532c6c7861bfe [FRESH]
+[debug] [lentille/router] currentRoute Object is not matched when initializing, updating its value
+[log] CC_ENTRY None
+[log] GPTU_START
+[log] GPTU_RULES_OK
+[log] GPTU_LOOP_START 163
+[log] GPTU_MATCHED 95 LuoguProblemParser

@@ -1,0 +1,26 @@
+[
+	{
+		"correct_answers":
+		[
+			"3"
+		],
+		"expected_output": "3",
+		"memory": 2.0703125,
+		"runtime": 5,
+		"stdout": "3",
+		"test": "5 5\n1 2 4 8 9\n",
+		"verdict": "AC"
+	},
+	{
+		"correct_answers":
+		[
+			"4"
+		],
+		"expected_output": "4",
+		"memory": 0.51171875,
+		"runtime": 11,
+		"stdout": "4",
+		"test": "5 8\n-3 -1 2 2 7\n",
+		"verdict": "AC"
+	}
+]

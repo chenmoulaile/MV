@@ -1,0 +1,7 @@
+{
+	"language": "zh",
+	"auto_create_dir": "/home/z/demo/cp",
+	"auto_listen": true,
+	"companion_auto_listen": true,
+	"companion_debug_log": true,
+}

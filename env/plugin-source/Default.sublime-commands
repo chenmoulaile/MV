@@ -1,0 +1,218 @@
+[
+	{
+		"caption": "Algorithm Competition Assistant: Run",
+		"command": "cph_view_tester",
+		"args": {
+			"action": "make_opd"
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Run with clean tests",
+		"command": "cph_view_tester",
+		"args": {
+			"action": "make_opd",
+			"clr_tests": true
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Toggle hide phantoms",
+		"command": "cph_test_manager",
+		"args": {
+			"action": "toggle_hide_phantoms"
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Listen to Competitive Companion",
+		"command": "cph_companion_listener"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Listen to Competitive Companion (new file per problem)",
+		"command": "cph_companion_listener",
+		"args": {"target": "new_file"}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Listen to Competitive Companion (fill the current file)",
+		"command": "cph_companion_listener",
+		"args": {"target": "current_file"}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Stop Competitive Companion listener",
+		"command": "cph_companion_stop_listener"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Import tests from file...",
+		"command": "cph_import_tests"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Pick and import test file",
+		"command": "cph_pick_import_file"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Import .in/.out tests next to this file",
+		"command": "cph_import_tests_here"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Start stress test",
+		"command": "cph_start_stress_test"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Stop stress test",
+		"command": "cph_stop_stress_test"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Stress test with options (pick files, rounds)",
+		"command": "cph_stress_with_options"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Switch to English",
+		"command": "cph_language_set_language",
+		"args": {
+			"language": "en"
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Switch to Chinese (切换为中文)",
+		"command": "cph_language_set_language",
+		"args": {
+			"language": "zh"
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Toggle language",
+		"command": "cph_language_toggle_language"
+	},
+	{
+		"caption": "Preferences: Algorithm Competition Assistant Settings",
+		"command": "cph_open_package_file",
+		"args": {
+			"file": "Algorithm Competition Assistant.sublime-settings",
+			"edit_base": true,
+			"default": "{\n\t$0\n}\n"
+		}
+	},
+	{
+		"caption": "Preferences: Algorithm Competition Assistant TestSyntax Settings",
+		"command": "cph_open_package_file",
+		"args": {
+			"file": "TestSyntax.sublime-settings",
+			"edit_base": true,
+			"default": "{\n\t$0\n}\n"
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Run all tests (keep going after failures)",
+		"command": "cph_run_all_tests"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Re-run failed tests only",
+		"command": "cph_run_failed_tests"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Run (force recompile)",
+		"command": "cph_run_force_recompile"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Add test from clipboard",
+		"command": "cph_add_test_from_clipboard"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Copy test input",
+		"command": "cph_copy_test_input"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Copy expected output",
+		"command": "cph_copy_test_expected"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Copy actual output",
+		"command": "cph_copy_test_actual"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Export tests as .in/.out files",
+		"command": "cph_export_tests"
+	},
+	{
+		"command": "cph_verdict_mode"
+	},
+	{
+		"command": "cph_stress_options"
+	},
+	{
+		"command": "cph_companion_options"
+	},
+	{
+		"command": "cph_io_mode"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Check environment (doctor)",
+		"command": "cph_doctor"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Insert template snippet",
+		"command": "cph_insert_template"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Test actions (run / detail / edit a test)",
+		"command": "cph_test_menu"
+	},
+	{
+		"command": "cph_toggle_build_mode"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Run all tests in parallel",
+		"command": "cph_run_parallel"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Jump to the first error location",
+		"command": "cph_jump_to_location",
+		"args": {
+			"target": "0"
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Jump to the last error location",
+		"command": "cph_jump_to_location",
+		"args": {
+			"target": "-1"
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Fetch problem from URL (samples + statement)",
+		"command": "cph_fetch_problem"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: View problem statement (Markdown)",
+		"command": "cph_view_statement"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Benchmark this test (N runs)",
+		"command": "cph_benchmark"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Contest timer (start / stop)",
+		"command": "cph_contest_timer"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Show practice statistics",
+		"command": "cph_stats"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Reset practice statistics",
+		"command": "cph_stats",
+		"args": {
+			"reset": true
+		}
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Calibrate this machine's speed",
+		"command": "cph_calibrate_machine"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Stress: replay last counterexample seed",
+		"command": "cph_stress_replay"
+	},
+	{
+		"caption": "Algorithm Competition Assistant: Run in interactive terminal (Ctrl+Alt+Shift+X)",
+		"command": "cph_manual_open"
+	}
+]

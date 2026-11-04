@@ -1,0 +1,710 @@
+[
+	{
+		"keys": [
+			"enter"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "insert_line"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "setting.edit_mode",
+				"operator": "equal",
+				"operand": false
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+enter"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "new_test"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "setting.edit_mode",
+				"operator": "equal",
+				"operand": false
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+v"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "insert_cb"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "setting.edit_mode",
+				"operator": "equal",
+				"operand": false
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+x"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "kill_proc"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+d"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "delete_tests"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+shift+up"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "swap_tests",
+			"dir": -1
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+shift+down"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "swap_tests",
+			"dir": 1
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+b"
+		],
+		"command": "cph_test_manager",
+		"args": {
+			"action": "make_opd",
+			"load_session": true
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+p"
+		],
+		"command": "cph_view_tester",
+		"args": {
+			"action": "sync_opdebugs"
+		},
+		"context": [
+			{
+				"key": "cph_has_run_panel",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+k",
+			"ctrl+p"
+		],
+		"command": "cph_view_tester",
+		"args": {
+			"action": "sync_opdebugs"
+		},
+		"context": [
+			{
+				"key": "cph_panel_toggle_ok",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+s"
+		],
+		"command": "cph_stop_stress_test",
+		"context": [
+			{
+				"key": "cph_stress_view",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+l"
+		],
+		"command": "cph_companion_stop_listener",
+		"context": [
+			{
+				"key": "cph_listener_running",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+t"
+		],
+		"command": "cph_insert_template",
+		"context": [
+			{
+				"operand": "source.c++",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+b"
+		],
+		"command": "cph_view_tester",
+		"args": {
+			"action": "make_opd"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "not_equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+i"
+		],
+		"command": "cph_import_tests",
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "not_equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+s"
+		],
+		"command": "cph_start_stress_test",
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "not_equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+l"
+		],
+		"command": "cph_companion_listener",
+		"args": {
+			"target": "new_file"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "not_equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+f"
+		],
+		"command": "cph_companion_listener",
+		"args": {
+			"target": "current_file"
+		},
+		"context": [
+			{
+				"operand": "source.TestSyntax",
+				"operator": "not_equal",
+				"match_all": true,
+				"key": "selector"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+b"
+		],
+		"command": "cph_run_all_tests",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+r"
+		],
+		"command": "cph_run_failed_tests",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+r"
+		],
+		"command": "cph_run_force_recompile",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+v"
+		],
+		"command": "cph_add_test_from_clipboard",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+c"
+		],
+		"command": "cph_copy_test_expected",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+c"
+		],
+		"command": "cph_copy_test_actual",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+e"
+		],
+		"command": "cph_export_tests",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+d"
+		],
+		"command": "cph_doctor",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+m"
+		],
+		"command": "cph_test_menu",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "equal",
+				"match_all": false,
+				"operand": "source.c++, source.c, source.python, source.java, source.rust, source.go, source.pascal, source.js, source.TestSyntax"
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+g"
+		],
+		"command": "cph_toggle_build_mode",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "not_equal",
+				"operand": "source.TestSyntax",
+				"match_all": true
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+p"
+		],
+		"command": "cph_run_parallel",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "not_equal",
+				"operand": "source.TestSyntax",
+				"match_all": true
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+f"
+		],
+		"command": "cph_fetch_problem",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "not_equal",
+				"operand": "source.TestSyntax",
+				"match_all": true
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+v"
+		],
+		"command": "cph_view_statement",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "not_equal",
+				"operand": "source.TestSyntax",
+				"match_all": true
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+k"
+		],
+		"command": "cph_benchmark",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "not_equal",
+				"operand": "source.TestSyntax",
+				"match_all": true
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+t"
+		],
+		"command": "cph_contest_timer",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "not_equal",
+				"operand": "source.TestSyntax",
+				"match_all": true
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+j"
+		],
+		"command": "cph_jump_to_location",
+		"args": {
+			"target": "0"
+		},
+		"context": [
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+x"
+		],
+		"command": "cph_manual_terminal",
+		"context": [
+			{
+				"key": "cph_terminal_view",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+alt+shift+x"
+		],
+		"command": "cph_manual_terminal",
+		"context": [
+			{
+				"key": "selector",
+				"operator": "not_equal",
+				"operand": "source.TestSyntax",
+				"match_all": true
+			},
+			{
+				"key": "cph_keybindings_enabled",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"enter"
+		],
+		"command": "cph_manual_send_line",
+		"context": [
+			{
+				"key": "cph_terminal_view",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+d"
+		],
+		"command": "cph_manual_eof",
+		"context": [
+			{
+				"key": "cph_terminal_view",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	},
+	{
+		"keys": [
+			"ctrl+x"
+		],
+		"command": "cph_manual_stop",
+		"context": [
+			{
+				"key": "cph_terminal_view",
+				"operator": "equal",
+				"operand": true
+			}
+		]
+	}
+]

@@ -1,0 +1,18 @@
+{
+  "name": "crystal",
+  "group": "CSP-S 2026",
+  "url": "https://www.luogu.com.cn/problem/P17831",
+  "interactive": false,
+  "memoryLimit": 512,
+  "timeLimit": 1000,
+  "tests": [
+    {
+      "input": "5 5\n1 2 4 8 9",
+      "output": "3"
+    },
+    {
+      "input": "5 8\n-3 -1 2 2 7",
+      "output": "4"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
++ BASE=/home/z/my-project/workspace/tts/gptsovits_pretrained
++ PY3=/home/z/.venv/bin/python3
++ mkdir -p /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-hubert-base /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-roberta-wwm-ext-large
++ P1=1989
++ msdl chinese-hubert-base/pytorch_model.bin /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-hubert-base/pytorch_model.bin
++ P2=1990
++ curl -sL --retry 3 --max-time 900 'https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath=chinese-hubert-base/pytorch_model.bin&Revision=master' -o /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-hubert-base/pytorch_model.bin
++ P3=1991
++ P4=1993
++ wait 1989 1990 1991 1993
++ msdl gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt
++ curl -sL --retry 3 --max-time 900 'https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath=gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt&Revision=master' -o /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt
++ msdl gsv-v2final-pretrained/s2G2333k.pth /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s2G2333k.pth
++ curl -sL --retry 3 --max-time 900 'https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath=gsv-v2final-pretrained/s2G2333k.pth&Revision=master' -o /home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s2G2333k.pth
++ msdl chinese-roberta-wwm-ext-large/pytorch_model.bin /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-roberta-wwm-ext-large/pytorch_model.bin
++ curl -sL --retry 3 --max-time 900 'https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath=chinese-roberta-wwm-ext-large/pytorch_model.bin&Revision=master' -o /home/z/my-project/workspace/tts/gptsovits_pretrained/chinese-roberta-wwm-ext-large/pytorch_model.bin

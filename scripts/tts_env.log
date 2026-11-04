@@ -1,0 +1,8 @@
++ cd /home/z/my-project/workspace/tts
++ PY=/home/z/.venv/bin/pip
++ PY3=/home/z/.venv/bin/python3
++ for i in 1 2 3
++ /home/z/.venv/bin/pip install --index-url https://download.pytorch.org/whl/cpu torch==2.5.1+cpu
+Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch==2.5.1+cpu
+  Downloading torch-2.5.1%2Bcpu-cp312-cp312-linux_x86_64.whl (174.6 MB)

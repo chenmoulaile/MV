@@ -1,0 +1,13 @@
+%YAML 1.2
+---
+name: TestSyntax
+file_extensions: []
+scope: source.TestSyntax
+
+contexts:
+  main:
+    # The old 'Test N {' / '} rtcode' markers are no longer written into the
+    # buffer (they came from the FOC-era format), so only the numeric
+    # highlight is kept.
+    - match: \b\d+\b
+      scope: constant.numeric.OPD

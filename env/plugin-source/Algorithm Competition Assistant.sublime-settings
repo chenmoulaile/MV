@@ -1,0 +1,428 @@
+{
+	// ================= Algorithm Competition Assistant 设置（中文注释版） =================
+	// 保存即生效。建议把要改的项复制到 User 设置里覆盖（Preferences ->
+	// Package Settings -> Algorithm Competition Assistant -> Settings），升级插件不会丢配置。
+	// Package Control 装的是 zip，Packages/ 下没有插件文件夹；改设置请直接编辑右侧的
+	// Packages/User/Algorithm Competition Assistant.sublime-settings。
+
+	// 界面语言: "zh" 中文 / "en" 英文（也可用命令面板的 Toggle language 切换）
+	"language": "zh",
+
+	// [Message] 区块（判决附言：RE 位置、输出截断提示等）的语言:
+	//   "auto" — 跟随上面的 language（默认）
+	//   "zh"   — 界面是英文时，附言仍单独用中文显示；其余界面不受影响。
+	//            checker 程序自己打印的文字永远原样保留。
+	"message_language": "auto",
+
+	// ================= 各语言编译/运行配置 =================
+	// 可用占位符:
+	//   {source_file}     源代码完整路径
+	//   {source_file_dir} 源代码所在目录
+	//   {file_name}       不带扩展名的文件名
+	//   {args}            附加命令行参数
+	//   {extra_sources}   多文件题目：额外的源文件（见 extra_sources 设置）
+	//   {include_dirs}    额外 -I 目录（见 include_dirs 设置）
+	// 注意: compile_cmd 里 "-o" 后面必须紧跟输出文件名 "{file_name}"，
+	//       顺序写错会导致编译失败！
+	// 默认命令使用正斜杠（Windows / Linux / macOS 都可用，反斜杠同样有效）。
+	// 想改成自己的写法，把 run_settings 复制到 User 设置里覆盖即可。
+	"run_settings": [
+		{
+			"name": "C++",
+			"extensions": ["cpp"],
+			// 编译命令；{extra_sources} / {include_dirs} 用不到时删掉即可
+			// -O2 很重要：不加优化时程序比评测机慢几十倍，本地时限毫无参考价值，
+			//   正确代码也会被判 TLE；实测 -O2 几乎不增加编译时间。
+			// -std 用 c++17：实测比 c++23 每次编译快约 1.2 秒
+			//   （3.4s vs 4.7s，含 <bits/stdc++.h>），也是多数 OJ 的口径。
+			"compile_cmd": "g++ \"{source_file}\" {extra_sources} {include_dirs} -std=c++17 -O2 -o \"{file_name}.exe\"",
+			// 运行命令（编译产物在源代码目录下）
+			"run_cmd": "\"{source_file_dir}/{file_name}.exe\" {args}",
+			// 保存后自动格式化的命令（需开启 auto_format_on_save）。{source_file}
+			// 会替换成带引号的绝对路径；clang-format 不在 PATH 时留空即可。
+			"format_cmd": "clang-format -i {source_file}",
+			// 单个测试的时间限制(毫秒) / 内存限制(MB)，超限判 TLE / MLE
+			"time_limit_ms": 2000,
+			"memory_limit_mb": 256,
+			// 多文件题目：把同目录其它源文件一起编译（glob 通配，可留空）
+			"extra_sources": [],
+			// 额外头文件目录（可留空）
+			"include_dirs": [],
+
+			// ===== 自定义判定器（SPJ，多解题必备）=====
+			// 填 checker 源文件（或已编译好的可执行文件）路径即可启用；留空则
+			// 仍按逐 token 比较。相对路径按源文件所在目录解析。
+			"checker": "",
+			// testlib（默认）：checker <输入文件> <用户输出文件> <标准答案文件>
+			//   —— 和 testlib 的 argv[1..3] 完全一致，现成 checker 直接用；
+			// stdin：把「输入 / 用户输出 / 标准答案」按顺序写到 stdin，
+			//   每段之间用一行 --- 分隔（方便写脚本 checker）。
+			"checker_style": "testlib",
+			// checker 的编译命令（只编译一次，之后复用；源码比 .exe 新时会自动重编译）
+			"checker_compile_cmd": "g++ -O2 -std=c++17 -I \"{checker_dir}\" \"{checker}\" -o \"{checker}.exe\"",
+			// checker 自己的时间限制（毫秒）
+			"checker_time_limit_ms": 10000,
+
+			// ===== 交互题（Interactor）=====
+			// 填 interactor 源文件（或已编译好的可执行文件）路径即可启用；留空则
+			// 按普通题跑。启用后该语言的运行会自动走交互流程（testlib 约定）：
+			//   interactor <输入文件> <输出文件> <标准答案文件>
+			// 它从 stdin 读选手输出、往 stdout 写要发给选手的内容，退出码即判决
+			// （0=AC 1=WA 2=PE 3=FAIL 7=PC）。交互题不并发跑（interactor 通常
+			// 不可重入）。
+			"interactor": "",
+			"interactor_compile_cmd": "g++ -O2 -std=c++17 -I \"{interactor_dir}\" \"{interactor}\" -o \"{interactor}.exe\"",
+			"interactor_time_limit_ms": 20000
+		},
+		{
+			"name": "Python",
+			"extensions": ["py"],
+			// Python 无需编译，置为 null
+			"compile_cmd": null,
+			"run_cmd": "python \"{source_file}\"",
+			"time_limit_ms": 5000,
+			"memory_limit_mb": 256
+		},
+		{
+			"name": "Java",
+			"extensions": ["java"],
+			"compile_cmd": "javac -J-Dfile.encoding=utf8 -d \"{source_file_dir}\" \"{source_file}\"",
+			"run_cmd": "java -classpath \"{source_file_dir}\" \"{file_name}\"",
+			"time_limit_ms": 5000,
+			"memory_limit_mb": 256
+		},
+		{
+			"name": "C",
+			"extensions": ["c"],
+			"compile_cmd": "gcc \"{source_file}\" {extra_sources} {include_dirs} -std=c17 -O2 -o \"{file_name}.exe\"",
+			"run_cmd": "\"{source_file_dir}/{file_name}.exe\" {args}",
+			"format_cmd": "clang-format -i {source_file}",
+			"time_limit_ms": 2000,
+			"memory_limit_mb": 256,
+			"extra_sources": [],
+			"include_dirs": []
+		},
+		{
+			"name": "Rust",
+			"extensions": ["rs"],
+			"compile_cmd": "rustc -O \"{source_file}\" -o \"{file_name}.exe\"",
+			"run_cmd": "\"{source_file_dir}/{file_name}.exe\" {args}",
+			"time_limit_ms": 2000,
+			"memory_limit_mb": 256
+		},
+		{
+			"name": "Go",
+			"extensions": ["go"],
+			// go build 会在当前目录生成可执行文件，-o 指定名字即可
+			"compile_cmd": "go build -o \"{file_name}.exe\" \"{source_file}\"",
+			"run_cmd": "\"{source_file_dir}/{file_name}.exe\" {args}",
+			"time_limit_ms": 2000,
+			"memory_limit_mb": 256
+		},
+		{
+			"name": "Pascal",
+			"extensions": ["pas", "pp"],
+			"compile_cmd": "fpc -O2 -o\"{file_name}.exe\" \"{source_file}\"",
+			"run_cmd": "\"{source_file_dir}/{file_name}.exe\" {args}",
+			"time_limit_ms": 2000,
+			"memory_limit_mb": 256
+		},
+		{
+			"name": "JavaScript (Node.js)",
+			"extensions": ["js", "mjs", "cjs"],
+			// Node 直接跑源码，无需编译
+			"compile_cmd": null,
+			"run_cmd": "node \"{source_file}\"",
+			"time_limit_ms": 5000,
+			"memory_limit_mb": 256
+		}
+	],
+
+	// ================= 判定口径 =================
+	// true:  第一个测试失败后停止（默认，最快暴露错误）
+	// false: 跑完全部测试（也可用命令 "Run all tests" 临时覆盖）
+	"stop_on_first_failure": true,
+	// 浮点题容差：0 = 关闭（逐 token 精确比较）。大于 0 时数字型 token 允许
+	// 误差 |a-b| <= tol * max(1, |a|, |b|)，例如 1e-6。
+	"float_tolerance": 0,
+	// PE（格式错误）是否按 AC 处理。false = 严格（PE 单独显示，默认）；
+	// true = 许多 OJ 的口径，token 相同但空白不同也算通过。
+	"regard_pe_as_ac": false,
+	// 单次运行保留的输出上限（字节），超出部分丢弃并在控制台提示，
+	// 防止程序在时间限制内疯狂输出把编辑器卡死。默认 8MB。
+	"max_output_bytes": 8388608,
+	// 抓题时允许下载的页面体积上限（字节）。页面按 64KB 分块读取，累计一超过
+	// 该上限就停止下载并提示，不会把超大页面整页读进内存，也不会静默截断。
+	// 默认 8MB。注意它与上面的 max_output_bytes 不是一回事：那个限制的是运行
+	// 期间保留多少程序输出，这个限制的是题目页面本身有多大。
+	"max_fetch_bytes": 8388608,
+	// 抓题单次请求的超时（秒）。默认 25。慢的 OJ 和挂掉的 OJ 在界面上
+	// 原本长得一样（都是"抓取失败"），所以这里给了你把它调大的余地：
+	// 网络差的时候 40 秒才出题面的站点，以前永远抓不下来。
+	"fetch_timeout_seconds": 25,
+	// 逐字符同步输出（只有交互式程序需要）。开启后输出量大时会明显变慢，
+	// 因为每个字符都要刷新一次视图。默认关闭。
+	"sync_output": false,
+
+	// ================= Benchmark（卡常对比） =================
+	// "Benchmark this test" 会把当前测试点跑几次，报告最快/平均/最慢。
+	// 单次测量被进程启动和调度噪声主导，跑多次才看得出常数差异。
+	"benchmark_runs": 5,
+
+	// ================= 保存后自动运行 / 自动格式化（默认关闭） =================
+	// 打开后保存源文件就会自动跑一次测试（带防抖，连续保存只跑最后一次）。
+	"auto_run_on_save": false,
+	"auto_run_debounce_seconds": 0.8,
+	// 保存后调用该语言的 format_cmd（见 run_settings，例如 clang-format），
+	// 文件真的被改了才重新载入视图。
+	"auto_format_on_save": false,
+
+	// ================= Competitive Companion 自动建文件 =================
+	// companion_target = "new_file" 时按 <auto_create_dir>/<题目标题>.
+	// <auto_create_extension> 新建并打开，**只建文件、存样例、记限制**，
+	// 不编译也不跑（代码还没写，跑样例只是白占内存）；想收样例并立刻跑一次，
+	// 用另一个监听入口（current_file）。改成 false 就谁也不新建
+	// （此时样例只能送到聚焦的或已固定的那个源码文件）。
+	"auto_create_file": true,
+	// 新建文件放在哪，按顺序取第一个能用的：
+	//   1. 本项（绝对路径，或相对"当前文件目录"的路径）
+	//   2. 你在某个 cpp 里点"Listen…new file"时那个 cpp 所在的目录
+	//   3. 当前聚焦的源码文件所在目录
+	//   4. Sublime 打开的工作区第一个文件夹
+	// 留空 = 走 2/3/4
+	"auto_create_dir": "",
+	"auto_create_extension": "cpp",
+	// 新建文件顶部的注释头。null = 用内置的（题名 / 来源 / 时间限制 / 空间限制，
+	// 注释符号按扩展名选 // 或 #）；写成字符串或"每行一个元素"的数组就完全按你写的来，
+	// 可用占位符 {problem} {url} {time} {memory}，写不认识的 {xxx} 原样留着；
+	// 空字符串 "" = 一行都不写。
+	"auto_create_header": null,
+	// 注释头之后写入的正文（可放你的模板；留空则只有注释头）
+	"auto_create_template": "",
+
+	// ================= 练习统计 =================
+	// "Show practice statistics" 报告的默认天数
+	"stats_days": 7,
+
+	// ================= 比赛计时 =================
+	// Ctrl+Alt+Shift+T 倒计时输入框里的默认分钟数（AtCoder 2h = 120，
+	// CSP-S 4.5h = 270）；0 = 每次都手输。不会自动开始：比赛钟从开赛
+	// 时刻走，不是从第一个样例落地那一刻。
+	"contest_duration_minutes": 120,
+
+	// ================= Subtask 分组 =================
+	// 测试点分组（NOI 系）：组内全部 AC 才算这组通过，汇总行显示部分分。
+	// 例：[{"name": "Sub1", "from": 1, "to": 3, "score": 30},
+	//      {"name": "Sub2", "from": 4, "to": 10, "score": 70}]
+	// from/to 是测试点序号（从 1 开始，含两端）。
+	"subtasks": [],
+
+	// ================= 并行运行测试点 =================
+	// "Run all tests in parallel"（Ctrl+Alt+Shift+P）用的 worker 数。
+	// 串行跑时，5 个点里有 2 个 TLE 就要干等 2×时限；并行大约只要 1/4。
+	// 每个测试点用独立的进程，互不影响。设为 1 即退回串行。
+	"parallel_workers": 4,
+
+	// ================= 编译模式（Debug / Release） =================
+	// 新打开的文件用哪种编译模式；随时可用 Ctrl+Alt+G 切换（按文件记忆，
+	// 不会写进这个设置文件）。
+	//   release：保证带 -O2，去掉 sanitizer 与断言参数 —— 计时用，速度与评测机可比
+	//   debug  ：去掉优化，加 -g -fsanitize=undefined -fsanitize-trap=undefined
+	//            -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS
+	//            —— 越界/溢出/除零会变成非零退出码并判 RE，行号由 gdb 回放给出，
+	//               详情视图里可以直接点着跳过去
+	//   ⚠ 未定义行为为什么必须在 debug 下查（这才是 RE 最常见的样子）：
+	//      越界访问不是崩溃，是未定义行为。-O2 下 std::vector 的
+	//      operator[] 越界往往读到堆里的垃圾，打印出一个随机数然后 exit 0 ——
+	//      插件只能判 WA，全流程没有一处提示你越界了。-D_GLIBCXX_ASSERTIONS
+	//      让同一个程序中止（rc=3）并打印 Assertion '__n < this->size()' failed，
+	//      判定为 RE，详情里还能点回出问题的文件:行。
+	//   ⚠ 为什么默认 sanitizer 是 trap 形态而不是 -fsanitize=address,undefined：
+	//      后者要在链接期解析 libasan / libubsan。本机 MSYS2 mingw gcc 实测两个
+	//      运行库都不存在（ld.exe: cannot find -lasan / -lubsan），而且 address
+	//      与 undefined 写在一起时，链接失败会把 undefined 一起拖死 —— 每次
+	//      debug 编译都要先失败一次、再靠插件去掉 -fsanitize 重试才成功。
+	//      -fsanitize-trap=undefined 把每条检查换成一条 ud2 指令，不需要运行库，
+	//      整数溢出 / 数组越界 / 除零照样变成非零退出码（Windows 上是
+	//      0xC000001D），插件判 RE，再交给 gdb 回放取 文件:行。代价是它不打印
+	//      UBSan 那种诊断文本，位置信息只能靠回放拿。
+	//   ⚠ 想要 ASan 时怎么办：自己在 compile_cmd 里写 -fsanitize=address 即可，
+	//      debug 模式会原样保留你写的 sanitizer、不会叠加默认那对；用不了的
+	//      工具链仍会在链接失败后自动去掉 -fsanitize 重试一次并提示。
+	//      更啰嗦但更全的容器检查用 -D_GLIBCXX_DEBUG；编译期常量溢出的
+	//      行:列 用 -Woverflow（运行期变量溢出属于未定义行为，编译器报不了，
+	//      只能靠 debug 模式）。编译成功但带警告时，编译条会显示为黄色
+	//      「编译警告」chip 并列出可点击的 文件:行:列 —— 警告不再只在编译失败
+	//      时顺带出现。
+	"build_mode": "release",
+
+	// ================= 编译标准自动档 =================
+	// 实测（g++ 15.2 + <bits/stdc++.h>，解析头文件的代价随标准涨）：
+	//   -fsyntax-only  c++17 1.29s   c++20 2.43s   c++23 2.53s
+	//   完整编译        c++17 1.69s                c++23 3.12s（均值 3.78s）
+	// 所以 compile_cmd 里写死 -std=c++23，等于每道题每次 Run 都多等 1.4~2 秒，
+	// 而绝大多数题解根本不用 C++20/23 语法。
+	// 打开后：先用 std_floor 那一档编；只有编译器自己说"这个要 C++NN 才有"
+	// （或源码里就写了 #include <expected> 这类只有新标准才有的头）才升档，
+	// 并把这道文件编得过的档位记在它测试数据旁边的 <名>__tests.std 里，
+	// 下次直接从那档开始。普通拼写/语法错误一律不重试，错误原样给你。
+	// false = 完全按 compile_cmd 里写的那一档编（旧行为）。
+	"auto_std_switch": true,
+	// 阶梯起点。若你的代码一直用 C++20（ranges 等），写成 "c++20" 就省掉第一次
+	// 探测；高于 compile_cmd 里那一档时无效（永远不会升过你写的标准）。
+	"std_floor": "c++17",
+
+	// ================= 编译缓存 =================
+	// 源文件（含 extra_sources）和编译命令都没变时跳过编译直接运行。
+	// 需要强制重新编译时执行命令 "Run (force recompile)"。
+	"compile_cache_enabled": true,
+
+	// 是否在运行面板底部显示汇总行（如 "4/5 通过 · 首个失败 test 3 · 总用时 1.24s"）
+	"show_summary_bar": true,
+
+	// ================= 对拍 (Stress Test) =================
+	// 对拍时每轮给用户程序/std 的单轮时间限制(秒)
+	"stress_time_limit_seconds": 2,
+	// 生成器的单轮时间限制(秒)。造数据比解题慢，所以单独放宽；
+	// 太小会把"生成器超时"误报成"生成器失败"。
+	"stress_generator_time_limit_seconds": 10,
+	// 对拍的最大轮数（直接开始对拍时使用；"Stress test with options" 会询问）
+	"stress_max_rounds": 1000,
+	// 对拍总时长上限(秒)，0 表示不限制。跑很久的对拍到点会自动停下并报告
+	"stress_max_wall_seconds": 0,
+	// 找不到 std / 生成器（或命中不止一个）时用什么方式挑文件：
+	//   "auto"   — Windows 先弹系统打开文件对话框，取消后可再选
+	//              「输入路径」或「浏览」；其它平台直接给出这两项
+	//   "native" — 总是用系统对话框（取消后同样可选「输入路径」）
+	//   "panel"  — 直接用 Sublime 输入面板：输入框预填当前源文件所在
+	//              目录（带结尾分隔符），只需补文件名；输入目录名回车
+	//              可进入该目录；路径不存在会提示并让你重输
+	// 「输入路径」可用任意文件名，多套 std/gen 轮换也不必改名；
+	// 自动搜索仍生效：同目录按 std/gen 等命名提示唯一命中时，普通对拍
+	// 不弹任何对话框直接开拍（Stress test with options 则总是询问）。
+	"stress_file_picker": "auto",
+	// 正解 std 和数据生成器从哪来：
+	//   "pick_once" — 这个 cpp 第一次启动对拍时用系统「打开文件」对话框选
+	//                 （先 std 后 gen），选完记在测试数据旁边的
+	//                 `<文件名>__tests.stress` 里，同一文件以后不再问；
+	//                 换个题目文件就重新各选一次
+	//   "same_dir"  — 只在源文件同目录里找 std.cpp / gen.cpp（按命名提示），
+	//                 找到唯一一对就直接开跑，永不弹窗
+	//   "auto"      — 旧行为：同目录找 → 退回上次用的全局路径 → 还不确定才问
+	"stress_file_source": "pick_once",
+	// 上次使用的 std 程序 / 数据生成器路径（对拍命令会自动记住）
+	"stress_std_file": "",
+	"stress_generator_file": "",
+	// 对拍发现反例时，自动把它保存成一个正式测试点
+	"stress_save_counterexample": true,
+	// 对拍反例写入 __tests 的大小上限（字节，按输入的 UTF-8 字节数计）。
+	// 大样例（如多组数据）整个存进 __tests 没法调试：超过上限的反例只在
+	// 对拍窗口里展示并提示原因，不写入测试点；上限内照旧保存（含 seed）。
+	// 设为 -1 表示不限制（总是保存），0 表示从不保存。
+	"stress_max_insert_bytes": 2000,
+
+	// ================= 模板片段 (Ctrl+Alt+T) =================
+	// 光标停在关键字后按 Ctrl+Alt+T 展开。查找顺序：
+	//   1. algorithms_base 目录下的 <关键字>.cpp / .cc / .py / .txt
+	//   2. 下面的 templates 字典
+	//   3. 内置片段（fastio / main / bf / debug / testlib）
+	"algorithms_base": null,
+	"templates": {
+		// 例: "seg": "// 线段树模板\n..."
+	},
+
+	// ================= 其他 =================
+	// 打开测评面板时是否自动隐藏侧边栏
+	"close_sidebar": true,
+
+	// 右键菜单里是否显示本插件的项。只看相关文件（run_settings 里的扩展名），
+	// 设为 false 可以完全不显示；命令面板和 View 菜单不受影响。
+	"context_menu": true,
+
+	// 包内快捷键（ctrl+alt+t / ctrl+alt+b / ctrl+alt+s ... 那一批）是否生效。
+	// 这些绑定随包加载、随包卸载：禁用或卸载本插件后按键会自动还给其它插件，
+	// 不会再占着键位。设成 false 则可以在**不改 keymap** 的情况下临时让出键位
+	// （运行面板内部的 enter / ctrl+d 等绑定不受影响，它们只在本插件自己的
+	// 视图里生效）。
+	"enable_keybindings": true,
+
+	// ================= 测试卡片面板自适应宽度 =================
+	// 面板宽度跟着内容走: 按当前面板上实际会显示的芯片行 (编译芯片 / 每张
+	// 测试卡片 / next test) 计算需要多宽, 窄了加宽、宽了收窄, 让卡片右侧
+	// 不再留一条空背景。两个方向之间留了 4em 的滞回带, 不会来回抖。
+	// 编译器诊断、汇总条、测试输入输出是段落, 允许换行, 不参与测量。
+	"auto_fit_panel_width": true,
+	// 面板最大宽度占窗口布局的比例, 0.5 表示最多占半个窗口 (下限 8%)
+	"max_panel_width_ratio": 0.5,
+
+	// 是否在运行时间/内存数值前显示标签前缀 (2.9.1 的样式):
+	// true:  卡片显示 "test 1 ... time: 2542ms | mem: 4 MB"（中文界面为
+	//        "时间: 2542ms | 内存: 4 MB"）。
+	// false: 卡片只显示数值本身 "2542ms | 4 MB"（2.9.2 默认, 单位本身已
+	//        说明含义, 且标签宽度正是慢卡片换行的原因）。
+	"show_time_mem_labels": false,
+
+	// 是否在答案比较时忽略标准错误 (cerr / debug 输出)。
+	// true: stderr 单独捕获，不参与答案比较（推荐，调试输出不再导致 WA）；
+	// false: stderr 混入 stdout 一起比较（旧行为）。
+	"ignore_stderr": true,
+
+	// ================= 详情 (detail) 显示模式 =================
+	// "view":    打开真实编辑器标签页（可选中复制，纯文本格式，含样例输入）
+	// "phantom": 旧版内嵌面板模式（显示在运行视图内部，不可选中文字）
+	"detail_style": "view",
+
+	// 详情页的"视觉层"：差分行用 region 上色，顶部加一条彩色徽章栏（带
+	// 复制预期/复制实际/关闭三个按钮），每个区块再加一行卡片头——就是运行
+	// 面板卡片那一行芯片（区块名 / 折叠 / 复制 / 行数·字节数），没有箭头，
+	// 并且和运行面板一样铺满整列（详情视图因此开启自动换行：minihtml 只在
+	// 换行开启时按视口宽度排 phantom，关掉时卡片会缩成芯片那么宽）。
+	// **不改缓冲区一个字节**——正文仍是纯文本，选中、复制、粘出去的内容和
+	// 关掉它时完全一样；region 只是显示装饰，也没有引入任何自定义语法
+	// （这条是当初特意撤掉的）。
+	// false = 回到完全没有颜色、没有头部栏、没有卡片的详情页。
+	"detail_rich": true,
+
+	// ================= Competitive Companion 监听 =================
+	// "Listen to Competitive Companion" 监听的端口。
+	// 启动一次后持续监听（浏览器扩展可反复点击发送）；再次执行该命令
+	// 只会切换目标文件；用 "Stop Competitive Companion listener" 停止。
+	"companion_port": 12345,
+	// 随 Sublime 启动自动开始监听（关掉它就得自己执行一次上面的命令）。
+	// 监听不需要先打开或保存某个文件：收到题目时没有目标文件就按下面的
+	// auto_create_* 新建一个。端口被别的程序占用时只在控制台提示一次。
+	"companion_auto_listen": true,
+	// 点一次扩展算什么（两种都有右键入口和快捷键）：
+	//   "new_file"     — 每次按题面新建 <题目名>.cpp（同名就打开已有那个，
+	//                   再把样例并进去），一题一个文件，和 cph /
+	//                   FastOlympicCodingHook 一样；此模式**不自动跑样例**。
+	//                   快捷键 Ctrl+Alt+L（Mac 示例里是 Super+Alt+L）
+	//   "current_file" — 只把样例送到你当前聚焦的源码文件，绝不新建；
+	//                   在里面执行过 "Listen to Competitive Companion" 的，
+	//                   一律送到那个文件；这个模式会立刻跑一次样例
+	//                   （文件里已经有代码，跑才有意义）。
+	//                   快捷键 Ctrl+Alt+F
+	// 选一次管本次会话，停止监听后回到这里的设置值；选 "new file" 那项会
+	// 顺手解除固定。
+	"companion_target": "new_file",
+	// 把每次点击的判定过程（模式、样例数、限制、落到哪个文件还是被拒）写到
+	// Data/Log/aca-companion.log。查"样例到底去哪了"时才需要开；默认关——
+	// 后台 HTTP 回调不该悄悄写用户的磁盘。
+	"companion_debug_log": false,
+
+	// ================= 测试数据存储 =================
+	// 传统模式: 测试数据存在 "foo.cpp__tests"（同目录）
+	"tests_file_suffix": "__tests",
+	// 文件输入输出（NOI / CSP-S 复赛那种要自己 freopen 的题）**不在这里设**：
+	// 每题的读写名都不一样，所以它跟着题目文件走，存在测试数据旁边的
+	// <名>__tests.io 里。入口是 View 菜单（或命令面板）里的
+	// "This problem reads/writes files"，两次回车就设好（默认按源码文件名猜：
+	// add.cpp -> add.in / add.out）。设过之后运行面板状态栏会写明
+	// "文件输入输出 add.in->add.out"，改回标准输入是同一个面板里那一行。
+	// 相对源代码目录的子目录（留空 = 直接放同目录）
+	"tests_relative_dir": "",
+	// cph-ng 模式: 测试数据存放在 "tests/foo.cpp__tests"
+	// 从 Competitive Companion 收到的时间/空间限制存在测试数据旁边的
+	// "foo.cpp__tests.limits" 里，重启后 Ctrl+Alt+B 仍然用得到它们。
+	"tests_folder_name": "tests"
+}

@@ -1,0 +1,27 @@
+Algorithm Competition Assistant 2.4.4
+=====================================
+
+The package display name is now "Algorithm Competition Assistant". Nothing
+else changed: no feature, no fix, no key binding, no command name.
+
+What was renamed:
+
+* cph-by-chenkx.sublime-settings -> Algorithm Competition Assistant.sublime-settings
+  (the package's own settings default; your overrides in Packages/User are
+  untouched and still win)
+* every command-palette caption "cph-by-chenkx: ..." ->
+  "Algorithm Competition Assistant: ...", and both Preferences entries now read
+  "Preferences: Algorithm Competition Assistant Settings" /
+  "... TestSyntax Settings"
+* Main.sublime-menu entries follow the same name
+* every ${packages}/... base_file path now points at the installed package
+  name instead of the repository name, so Preferences > Package Settings and
+  Key Bindings open the shipped defaults on every machine, not only where the
+  folder happens to be named after the repository
+
+What deliberately did NOT change:
+
+* command names (cph_*), classes and every Packages/User data file name. Your
+  practice statistics still live in Packages/User/cph-by-chenkx-stats.json and
+  machine calibration in cph-by-chenkx-machine.json - months of history survive
+  the rename untouched.

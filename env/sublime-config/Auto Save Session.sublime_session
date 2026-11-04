@@ -1,0 +1,715 @@
+{
+	"file_history":
+	[
+		"/home/z/demo/cp/P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp"
+	],
+	"folder_history":
+	[
+	],
+	"last_version": 4192,
+	"last_window_id": 1,
+	"log_indexing": false,
+	"next_update_check": 1793884112,
+	"settings":
+	{
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/z/demo/ref/crystal.cpp",
+					"settings":
+					{
+						"buffer_size": 697,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					},
+					"undo_stack":
+					[
+					]
+				},
+				{
+					"file": "/home/z/demo/cp/P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp",
+					"settings":
+					{
+						"buffer_size": 822,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					},
+					"undo_stack":
+					[
+						[
+							2,
+							1,
+							"paste",
+							null,
+							"AQAAAH0AAAAAAAAANgMAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAfQAAAAAAAAB9AAAAAAAAAAAAAAAAAPC/"
+						]
+					]
+				},
+				{
+					"contents": "\n5 5\n1 2 4 8 9\n\n3\n\n5 8\n-3 -1 2 2 7\n\n4\n\n",
+					"settings":
+					{
+						"buffer_size": 39,
+						"line_ending": "Unix",
+						"name": "P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp -run",
+						"read_only": true,
+						"scratch": true
+					},
+					"undo_stack":
+					[
+						[
+							1,
+							1,
+							"cph_test_manager",
+							{
+								"action": "make_opd",
+								"build_sys": "source.c++",
+								"clr_tests": false,
+								"code_view_id": 18,
+								"force_compile": false,
+								"memory_limit_mb": 1024,
+								"parallel": false,
+								"run_all": false,
+								"run_failed": false,
+								"run_file": "/home/z/demo/cp/P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp",
+								"sync_out": false,
+								"time_limit_ms": 1000
+							},
+							"AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							4,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_input",
+								"text": "5 5\n1 2 4 8 9\n"
+							},
+							"AQAAAAEAAAAAAAAADwAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							6,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_out",
+								"text": "3\n"
+							},
+							"AQAAAA8AAAAAAAAAEQAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAADwAAAAAAAAAPAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							8,
+							1,
+							"cph_test_manager",
+							{
+								"action": "replace",
+								"region":
+								[
+									1,
+									17
+								],
+								"text": ""
+							},
+							"AQAAAAEAAAAAAAAAAQAAAAAAAAAQAAAANSA1CjEgMiA0IDggOQozCg",
+							"AQAAAAAAAAABAAAAEQAAAAAAAAARAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							12,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_input",
+								"text": "5 8\n-3 -1 2 2 7\n"
+							},
+							"AQAAAAEAAAAAAAAAEQAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							14,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_out",
+								"text": "4\n"
+							},
+							"AQAAABEAAAAAAAAAEwAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAEQAAAAAAAAARAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							16,
+							1,
+							"cph_test_manager",
+							{
+								"action": "replace",
+								"region":
+								[
+									1,
+									19
+								],
+								"text": ""
+							},
+							"AQAAAAEAAAAAAAAAAQAAAAAAAAASAAAANSA4Ci0zIC0xIDIgMiA3CjQK",
+							"AQAAAAAAAAABAAAAEwAAAAAAAAATAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							19,
+							1,
+							"cph_test_manager",
+							{
+								"action": "replace",
+								"region":
+								[
+									0,
+									0
+								],
+								"text": "\n\n"
+							},
+							"AQAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							21,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_input",
+								"text": "5 8\n-3 -1 2 2 7\n"
+							},
+							"AQAAAAEAAAAAAAAAEQAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							23,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_out",
+								"text": "4\n"
+							},
+							"AQAAABEAAAAAAAAAEwAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAEQAAAAAAAAARAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							25,
+							1,
+							"cph_test_manager",
+							{
+								"action": "replace",
+								"region":
+								[
+									1,
+									19
+								],
+								"text": "5 8\n-3 -1 2 2 7\n\n4"
+							},
+							"AQAAAAEAAAAAAAAAEwAAAAAAAAASAAAANSA4Ci0zIC0xIDIgMiA3CjQK",
+							"AQAAAAAAAAABAAAAEwAAAAAAAAATAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							29,
+							1,
+							"cph_test_manager",
+							{
+								"action": "replace",
+								"region":
+								[
+									0,
+									0
+								],
+								"text": "\n\n"
+							},
+							"AQAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAFQAAAAAAAAAVAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							31,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_input",
+								"text": "5 5\n1 2 4 8 9\n"
+							},
+							"AQAAAAEAAAAAAAAADwAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							33,
+							1,
+							"cph_test_manager",
+							{
+								"action": "insert_opd_out",
+								"text": "3\n"
+							},
+							"AQAAAA8AAAAAAAAAEQAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAADwAAAAAAAAAPAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							35,
+							1,
+							"cph_test_manager",
+							{
+								"action": "replace",
+								"region":
+								[
+									1,
+									17
+								],
+								"text": "5 5\n1 2 4 8 9\n\n3"
+							},
+							"AQAAAAEAAAAAAAAAEQAAAAAAAAAQAAAANSA1CjEgMiA0IDggOQozCg",
+							"AQAAAAAAAAABAAAAEQAAAAAAAAARAAAAAAAAAAAAAAAAAPC/"
+						]
+					]
+				},
+				{
+					"contents": "\n\n\n5 5\n1 2 4 8 9\n\n3\n\n3\n\n全部 1 行一致\n",
+					"settings":
+					{
+						"buffer_size": 33,
+						"line_ending": "Unix",
+						"name": "P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp - test 1 detail",
+						"read_only": true,
+						"scratch": true
+					},
+					"undo_stack":
+					[
+						[
+							1,
+							1,
+							"cph_test_detail_view",
+							{
+								"blocks":
+								[
+									{
+										"copy": "5 5\n1 2 4 8 9\n",
+										"count": 2,
+										"id": "input",
+										"kind": "",
+										"meta": "2 行 / 14 字节",
+										"start": 3,
+										"title": "输入"
+									},
+									{
+										"copy": "3",
+										"count": 1,
+										"id": "expected",
+										"kind": "test-accept",
+										"meta": "1 行 / 1 字节",
+										"start": 6,
+										"title": "预期输出"
+									},
+									{
+										"copy": "3",
+										"count": 1,
+										"id": "actual",
+										"kind": "test-accept",
+										"meta": "1 行 / 1 字节",
+										"start": 8,
+										"title": "实际输出"
+									},
+									{
+										"copy": null,
+										"count": 1,
+										"id": "diff",
+										"kind": "test-accept",
+										"meta": "逐行对比，忽略行末空格与末尾换行",
+										"start": 10,
+										"title": "差异"
+									}
+								],
+								"copy_actual": "3",
+								"copy_expected": "3",
+								"header": "<div class=\"panel\">\n\t<a class=\"test test-accept\">\n\t\t<span class=\"verdict-badge verdict-AC\">AC</span>\n\t\t测试 1\n\t</a>\n\n\t<a class=\"config\">\n\t\t<i class=\"runtime-info\" style=\"padding: 1px 5px; position: relative; font-style: normal\"> 5ms</i>\n\t</a>\n\n\t<a class=\"config\" style=\"display: inline;\">\n\t\t<i class=\"memory-info\" style=\"padding: 1px 5px; position: relative; font-style: normal\">2 MB</i>\n\t</a>\n\n\t<a class=\"config\" href=\"detail-close\" style=\"color: var(--redish);\">\n\t\t<span>&#10005;</span>\n\t</a>\n</div>\n",
+								"jump": null,
+								"marks":
+								[
+								],
+								"text": "\n\n\n5 5\n1 2 4 8 9\n\n3\n\n3\n\n全部 1 行一致\n"
+							},
+							"AQAAAAAAAAAAAAAAIQAAAAAAAAAAAAAA",
+							"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+						],
+						[
+							2,
+							1,
+							"cph_test_detail_view",
+							{
+								"blocks":
+								[
+									{
+										"copy": "5 5\n1 2 4 8 9\n",
+										"count": 2,
+										"id": "input",
+										"kind": "",
+										"meta": "2 行 / 14 字节",
+										"start": 3,
+										"title": "输入"
+									},
+									{
+										"copy": "3",
+										"count": 1,
+										"id": "expected",
+										"kind": "test-accept",
+										"meta": "1 行 / 1 字节",
+										"start": 6,
+										"title": "预期输出"
+									},
+									{
+										"copy": "3",
+										"count": 1,
+										"id": "actual",
+										"kind": "test-accept",
+										"meta": "1 行 / 1 字节",
+										"start": 8,
+										"title": "实际输出"
+									},
+									{
+										"copy": null,
+										"count": 1,
+										"id": "diff",
+										"kind": "test-accept",
+										"meta": "逐行对比，忽略行末空格与末尾换行",
+										"start": 10,
+										"title": "差异"
+									}
+								],
+								"copy_actual": "3",
+								"copy_expected": "3",
+								"header": "<div class=\"panel\">\n\t<a class=\"test test-accept\">\n\t\t<span class=\"verdict-badge verdict-AC\">AC</span>\n\t\t测试 1\n\t</a>\n\n\t<a class=\"config\">\n\t\t<i class=\"runtime-info\" style=\"padding: 1px 5px; position: relative; font-style: normal\"> 5ms</i>\n\t</a>\n\n\t<a class=\"config\" style=\"display: inline;\">\n\t\t<i class=\"memory-info\" style=\"padding: 1px 5px; position: relative; font-style: normal\">2 MB</i>\n\t</a>\n\n\t<a class=\"config\" href=\"detail-close\" style=\"color: var(--redish);\">\n\t\t<span>&#10005;</span>\n\t</a>\n</div>\n",
+								"jump": null,
+								"marks":
+								[
+								],
+								"text": "\n\n\n5 5\n1 2 4 8 9\n\n3\n\n3\n\n全部 1 行一致\n"
+							},
+							"AQAAAAAAAAAAAAAAIQAAAAAAAAArAAAACgoKNSA1CjEgMiA0IDggOQoKMwoKMwoK5YWo6YOoIDEg6KGM5LiA6Ie0Cg",
+							"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+						]
+					]
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/z/demo/cp/P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp"
+			],
+			"find":
+			{
+				"height": 0.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/z/demo/ref/crystal.cpp",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 697,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										697
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/C++/C++.sublime-syntax",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/z/demo/cp/P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp",
+							"selected": true,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 822,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										822,
+										822
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/C++/C++.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 233.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"stack_multiselect": false,
+							"type": "text"
+						}
+					]
+				},
+				{
+					"sheets":
+					[
+						{
+							"buffer": 2,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 39,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										39,
+										39
+									]
+								],
+								"settings":
+								{
+									"cph_jump_targets":
+									[
+									],
+									"cph_run_view": true,
+									"delete_forb": true,
+									"edit_mode": false,
+									"fold_buttons": false,
+									"line_numbers": false,
+									"syntax": "Packages/Algorithm Competition Assistant/TestSyntax.sublime-syntax",
+									"word_wrap": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"selected": true,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 33,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"cph_detail_index": 0,
+									"cph_detail_source": "/home/z/demo/cp/P17831 [CSP-S 2026] 能量水晶 crystal（民间数据）.cpp",
+									"fold_buttons": false,
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"word_wrap": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"stack_multiselect": false,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 0.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.639198499062,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,0,0,1920,1080,1920,1080,0",
+			"project": "",
+			"replace":
+			{
+				"height": 0.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 1,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 1,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

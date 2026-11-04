@@ -1,0 +1,10 @@
++ BASE=/home/z/my-project/workspace/tts/gptsovits_pretrained
++ R='https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath='
++ for spec in "gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt|$BASE/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt" "chinese-hubert-base/pytorch_model.bin|$BASE/chinese-hubert-base/pytorch_model.bin" "chinese-roberta-wwm-ext-large/pytorch_model.bin|$BASE/chinese-roberta-wwm-ext-large/pytorch_model.bin"
++ fp=gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt
++ out=/home/z/my-project/workspace/tts/gptsovits_pretrained/gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch=12-step=369668.ckpt
+++ redir gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt
+++ curl -sI --max-time 30 'https://modelscope.cn/api/v1/models/AI-ModelScope/GPT-SoVITS/repo?FilePath=gsv-v2final-pretrained/s1bert25hz-5kh-longer-epoch%3D12-step%3D369668.ckpt&Revision=master'
+++ cut '-d ' -f2
+++ tr -d '\r'
+++ grep -i '^location:'
